@@ -1,191 +1,283 @@
-# REAN-PRO Store Management System
+# 🚗 Garage Management System
 
-A modern Store Management System built with **WPF (.NET)** and **Material Design In XAML**.
+Modern Garage Management System built with **WPF .NET 8**, **Laravel 13 API**, and **MySQL Database**.
 
-## Current Features
-
-### 1. Login Screen (FrmUserLogin)
-
-The Login Screen provides a modern and user-friendly interface for users to access the system.
-
-#### Features
-
-* Material Design UI
-* Custom Window Style
-* Username Authentication
-* Password Authentication
-* Enter Key Login Support
-* Application Exit Menu
-* Draggable Window
-* Responsive Card Layout
-* Custom Logo Support
-
-#### Login Actions
-
-* Sign In
-* Create Store
-* Exit Application
+A complete business management solution designed for garages, POS systems, coffee shops, and multi-branch businesses.
 
 ---
 
-### 2. Store Setup Screen (FrmStoreSetup)
+## ✨ Features
 
-The Store Setup Screen allows users to configure the system before first use.
+### 🔐 Authentication
 
-#### Features
+* User Login
+* API Authentication
+* Laravel Sanctum Token
+* Change Password
+* User Profile
 
-* Material Design UI
-* Modern Registration Form
-* Close Button
-* Custom Window Style
-* Store Information Setup
-* Administrator Account Creation
+### 🏢 Branch Management
 
-#### Store Information
+* Main Branch
+* Sub Branch
+* Multi-Branch Support
+* Branch Configuration
 
-Users can configure:
+### 👥 User Management
 
-* System Type
+* User Roles
+* User Permissions
+* Activity Logs
+* Access Control
 
-  * Store Management
-  * Garage Management
-  * Restaurant Management
-  * POS System
-  * Pharmacy Management
+### 📊 Dashboard
 
-* Store Name
+* Sales Overview
+* Customer Statistics
+* Product Statistics
+* Branch Statistics
+* Recent Activities
 
-* Phone Number
+### 🎨 Modern UI
 
-* Location
+* Material Design
+* Responsive Layout
+* Modern Dashboard
+* Dark/Light Theme Ready
+* Professional Icons
 
-  * PP - Phnom Penh
-  * KPT - Kampot
-  * KPS - Sihanoukville
+### 🔄 Auto Update
 
-* Administrator Username
-
-* Administrator Password
-
-* Confirm Password
-
-#### Available Actions
-
-* Create Store
-* Back To Login
-* Close Window
+* GitHub Release Check
+* Version Control
+* Update Notification
+* Download Latest Version
 
 ---
 
-## Technology Stack
+## 🛠 Technology Stack
 
 ### Frontend
 
-* WPF (.NET)
+* WPF .NET 8
+* C#
 * XAML
-* MaterialDesignInXamlToolkit
+* Material Design In XAML Toolkit
 
-### Architecture
+### Backend
 
-Current Project Structure:
+* Laravel 13
+* PHP 8.4+
+* REST API
+* Laravel Sanctum
 
-Store_Online
+### Database
 
+* MySQL
+* Stored Procedures
+* Views
+
+### Tools
+
+* Visual Studio 2026 Enterprise
+* Visual Studio Code
+* GitHub
+* Postman
+
+---
+
+## 🏗 System Architecture
+
+```text
+WPF Desktop Application
+           │
+           ▼
+      REST API
+           │
+           ▼
+      Laravel 13
+           │
+           ▼
+         MySQL
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+GarageManagementSystem
+│
 ├── Assets
-
+│   ├── Icons
+│   └── Images
+│
+├── Alerts
+├── Class
+├── Models
+├── Services
+├── Dashboard
 ├── Users
-
-│   ├── FrmUserLogin.xaml
-
-│   └── FrmStoreSetup.xaml
-
-├── ResourceDictionary
-
-├── Resources
-
-└── App.xaml
+├── Reports
+│
+├── MainWindow.xaml
+├── FrmUserLogin.xaml
+├── App.xaml
+│
+└── README.md
+```
 
 ---
 
-## Application Flow
+## 🔑 API Authentication
 
-Current Workflow:
+### Login Request
 
-Login Screen
-↓
-Create Store
-↓
-Store Setup
-↓
-Create Administrator Account
-↓
-Return To Login
-↓
-Sign In
+```http
+POST /api/v1/login
+```
+
+### Request Body
+
+```json
+{
+  "username": "admin",
+  "password": "123456"
+}
+```
+
+### Response
+
+```json
+{
+  "success": true,
+  "message": "Login Successfully",
+  "token": "xxxxxxxxxxxxxxxx",
+  "user": {
+    "userid": "001",
+    "name": "Administrator"
+  }
+}
+```
 
 ---
 
-## Current Status
+## 📡 API Modules
+
+| Module             | Endpoint                              |
+| ------------------ | ------------------------------------- |
+| Login              | POST /api/v1/login                    |
+| Profile            | GET /api/v1/profile                   |
+| Products           | GET /api/v1/products                  |
+| Store Registration | POST /api/v1/store/register           |
+| System Information | GET /api/v1/setting/combo/system_info |
+
+---
+
+## 💻 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/reanprogramming/garage-system.git
+```
+
+### Open Project
+
+```bash
+Visual Studio 2026 Enterprise
+```
+
+### Restore Packages
+
+```bash
+dotnet restore
+```
+
+### Build Project
+
+```bash
+dotnet build
+```
+
+### Run Project
+
+```bash
+dotnet run
+```
+
+---
+
+## 📸 Screenshots
+
+### Login Screen
+
+* Modern Material Design UI
+* API Authentication
+* User Validation
+
+### Dashboard
+
+* Statistics Cards
+* Quick Actions
+* Business Overview
+
+---
+
+## 🚀 Roadmap
 
 ### Completed
 
-* Login UI
-* Store Setup UI
-* Material Design Theme
-* Form Navigation
-* Window Controls
-* User Experience Improvements
+* User Login
+* Laravel API Integration
+* Material Design UI
+* Branch Management
+* User Management
+* Dashboard
 
-### In Progress
+### Upcoming
 
-* Database Connection
-* SQL Server Integration
-* User Authentication
-* Store Registration Logic
+* Sales Module
+* Inventory Module
+* Purchase Module
+* Reporting Module
+* Telegram Notifications
+* Flutter Mobile Application
+* Online Synchronization
 
 ---
 
-## Next Development Phase
+## 📱 Future Mobile Application
 
-The next milestone is implementing SQL Server integration.
+Flutter Mobile App:
 
-### Planned Features
-
-* SQL Server Connection
-* Store Registration Save Function
-* User Authentication
-* Password Encryption
+* Android Support
+* iOS Support
+* Material 3 Design
+* API Integration
 * Dashboard
-* User Management
-* Product Management
-* Sales Management
-* Reporting System
-
-### Future Roadmap
-
-Phase 1
-
-* Database Connection
-* Login Validation
-* Dashboard
-
-Phase 2
-
-* User Management
-* Product Management
-
-Phase 3
-
-* Sales & POS
-
-Phase 4
-
-* Reports & Analytics
+* Products
+* Sales Reports
 
 ---
 
-## Author
+## 👨‍💻 Developer
 
-REAN-PRO
+**JOIN CODER**
 
-Created for learning, sharing knowledge, and helping developers build modern business applications using WPF and C#.
+GitHub:
+https://github.com/reanprogramming
+
+Telegram:
+https://t.me/reansourcecode
+
+YouTube:
+https://youtube.com/@joincoder
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+Copyright © 2026 JOIN CODER.
